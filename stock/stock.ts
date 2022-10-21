@@ -8,6 +8,7 @@ export class Stock {
   private _highs: number[] | undefined;
   private _lows: number[] | undefined;
   private _volumes: number[] | undefined;
+  private _adjCloses: number[] | undefined;
 
   constructor(ticker: Ticker) {
     this._ticker = ticker;
@@ -15,7 +16,9 @@ export class Stock {
 
   public get dates(): Date[] {
     if (this._dates === undefined) {
-      this._dates = this._ticker.historicalData.map((data) => data.date);
+      this._dates = this._ticker.historicalData.map(
+        (data) => new Date(data.date),
+      );
     }
     return this._dates;
   }
@@ -53,5 +56,14 @@ export class Stock {
       this._volumes = this._ticker.historicalData.map((data) => data.volume);
     }
     return this._volumes;
+  }
+
+  public get adjCloses(): number[] {
+    if (this._adjCloses === undefined) {
+      this._adjCloses = this._ticker.historicalData.map(
+        (data) => data.adjClose,
+      );
+    }
+    return this._adjCloses;
   }
 }

@@ -1,31 +1,27 @@
 <template>
-  <div>
-    <ClientOnly>
-      <Editor @generate="test" />
-    </ClientOnly>
-  </div>
+  <NuxtLoadingIndicator />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
-<script setup lang="ts">
-import { Stock } from "./stock/stock";
-import { Ticker } from "./types/stock/ticker";
-import { runtime } from "~/plugins/blockly/runtume";
-const indicatorts = await import("indicatorts");
-
-const config = useRuntimeConfig();
-const { data: stockData } = await useFetch<Ticker>(
-  `${config.public.apiBaseUrl}/tickers/2330.TW/historical-data?start=1980-01-01`,
-);
-
-// prepare runtime
-const stock = new Stock(stockData.value);
-
-if (indicatorts && stock && runtime && process.client) {
-  console.log("Runtime ready");
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Quantico&family=Silkscreen&display=swap");
+*,
+*::before,
+*::after {
+  font-family: "Quantico", monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-function test(code: string) {
-  console.log(code);
-  eval(code);
+body {
+  width: 100vw;
+  height: 100vh;
 }
-</script>
+
+.blocklyTreeLabel {
+  font-family: "Quantico", monospace;
+}
+</style>
