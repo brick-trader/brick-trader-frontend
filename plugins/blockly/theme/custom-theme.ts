@@ -27,12 +27,9 @@ const defaultBlockStyles = {
    *  orange blocks which represent math operator blocks
    */
   math_blocks: {
-    colourPrimary: "#f78b2d",
-    colourSecondary: "#f3ec8e",
-    colourTertiary: "#f78b2d",
-    family: "Georgia, serif",
-    weight: "bold",
-    size: 24,
+    colourPrimary: "#F78B2D",
+    colourSecondary: "#F3EC8E",
+    colourTertiary: "#F79B3D",
   },
   procedure_blocks: {
     colourPrimary: "#590721",
@@ -46,7 +43,7 @@ const defaultBlockStyles = {
   text_blocks: {
     colourPrimary: "#21a346",
     colourSecondary: "#5ecfaf",
-    colourTertiary: "#04684c",
+    colourTertiary: "#31b356",
   },
   variable_blocks: {
     colourPrimary: "#4b2d84",
@@ -59,14 +56,29 @@ const defaultBlockStyles = {
     colourTertiary: "#83759e",
   },
   function_blocks: {
-    colourPrimary: "#1a1a1a",
-    colourSecondary: "#816ea7",
-    colourTertiary: "#83759e",
+    colourPrimary: "#1A1A1A",
+    colourSecondary: "#816EA7",
+    colourTertiary: "#83759E",
   },
   strategy: {
+    colourPrimary: "#00BCD4",
+    colourSecondary: "#00BCD4",
+    colourTertiary: "#10CCE4",
+  },
+  trend: {
+    colourPrimary: "#FF9F1C",
+    colourSecondary: "#FF9F1C",
+    colourTertiary: "#FFAF2C",
+  },
+  function: {
     colourPrimary: "#9B52E4",
-    colourSecondary: "#816ea7",
-    colourTertiary: "#9B52E4",
+    colourSecondary: "#9B52E4",
+    colourTertiary: "#AB62F4",
+  },
+  volume: {
+    colourPrimary: "#4B5AFF",
+    colourSecondary: "#4B5AFF",
+    colourTertiary: "#5B6AFF",
   },
 };
 
@@ -99,7 +111,7 @@ const categoryStyles = {
     colour: "#4b2d84",
   },
   strategy: {
-    colourPrimary: "##6200EE",
+    colourPrimary: "#6200EE",
     colourSecondary: "#816ea7",
     colourTertiary: "#83759e",
   },

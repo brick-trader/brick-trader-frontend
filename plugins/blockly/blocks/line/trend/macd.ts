@@ -7,11 +7,11 @@ Blockly.Blocks["macd"] = {
     this.setColour(230);
     this.setTooltip("");
     this.setHelpUrl("");
-    this.setStyle("strategy");
+    this.setStyle("trend");
   },
 };
 
 Blockly.JavaScript["macd"] = function (_) {
-  const code = "indicatorts.macd(stock.closings).macdLine";
+  const code = "runtime.fn.macd(stock.closings)";
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
