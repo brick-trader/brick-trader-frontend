@@ -235,13 +235,12 @@ onMounted(() => {
         @click="(event) => (event.target as HTMLInputElement).showPicker()"
       />
     </div>
-    <hr />
     <ClientOnly v-if="backtestData">
       <div id="infos">
-        <DashboardCard title="Total Closed Trades">
+        <DashboardCard title="Total Closed Trades" class="cardCss">
           <p>{{ Math.round(backtestData.actionCount) }}</p>
         </DashboardCard>
-        <DashboardCard title="Win Rate">
+        <DashboardCard title="Win Rate" class="cardCss">
           <p>
             {{
               isNaN(backtestData.winRate)
@@ -250,7 +249,7 @@ onMounted(() => {
             }}
           </p>
         </DashboardCard>
-        <DashboardCard title="Profit Factor">
+        <DashboardCard title="Profit Factor" class="cardCss">
           <p>
             {{
               isNaN(backtestData.profitFactor)
@@ -259,7 +258,7 @@ onMounted(() => {
             }}
           </p>
         </DashboardCard>
-        <DashboardCard title="Net Profit">
+        <DashboardCard title="Net Profit" class="cardCss">
           <p>{{ Math.round(backtestData.result) }}%</p>
         </DashboardCard>
       </div>
@@ -375,5 +374,10 @@ hr {
   z-index: 999;
   background-color: #000;
   opacity: 0.5;
+}
+
+.cardCss {
+  border-top-style: solid;
+  border-color: #ff4f1c;
 }
 </style>
